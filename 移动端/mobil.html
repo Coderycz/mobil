@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalble=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .app {
+            height: 100%;
+            width: 100%;
+            background: gray;
+            position: relative;
+        }
+
+        p {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .ellipsis {
+            //display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <p class="ellipsis">移动端布局屎壳郎的房间里时代sdfsdfsdfsdfsdfsdfsdf峻峰了是</p>
+    </div>
+</body>
+
+</html>

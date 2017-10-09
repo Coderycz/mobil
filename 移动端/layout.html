@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layout</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_370473_4hok8owxans46lxr.css">
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%
+        }
+
+        body {
+            margin: 0;
+            position: relative;
+            padding: 50px 0 50px 0;
+            box-sizing: border-box;
+        }
+
+        header,
+        footer {
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            font-size: 1.4rem;
+            color: white;
+            background: #00b38a;
+        }
+
+        .custom-info {
+            height: 44px;
+            width: 100%;
+            padding: 0 20px 0 20px;
+            position: relative;
+            border-bottom: 1px solid #666;
+            box-sizing: border-box;
+        }
+
+        .info {
+            height: 44px;
+            line-height: 44px;
+            margin-right: 100px;
+            display: block;
+            position: relative;
+        }
+
+        .login {
+            background: gray;
+            height: 30px;
+            margin-top: 5px;
+            width: 100px;
+            line-height: 30px;
+            display: block;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            right: 20px;
+            color: #00b38a;
+            border-radius: 22px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul li {
+            list-style: none;
+            width: 100%;
+            padding: 14px;
+            position: relative;
+            box-sizing: border-box;
+            border-bottom: 1px solid #666;
+        }
+
+        ul img {
+            position: absolute;
+            display: inline-block;
+            width: 60px;
+            float: left
+        }
+
+        .item {
+            margin-left: 70px;
+            margin-right: 6px;
+        }
+
+        .sec-div {
+            height: 15px;
+            line-height: 15px;
+        }
+
+        .item h3 {
+            font-weight: 500;
+        }
+
+        .sec-div span {
+            font-size: 1.4rem;
+            color: #00b38a;
+            float: right;
+        }
+
+        .sec-row {
+            width: 60%;
+           
+            font-size: 14px;
+            float: left;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .bottom-p {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .more {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+/* 底部版权 */
+        .footer{
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+
+        footer .zw{
+            display: inline-block;
+            width: 33.33333%;
+            font-size: 1rem;
+            text-align: center;
+            color: #c2cfcc;
+            float: left;
+            background: white;
+            border-top: 1px solid #ddd
+        }
+        footer .actived{
+            color: #00b38a;
+            background: #e7f3f0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>拉勾网</header>
+    <section>
+        <div class="custom-info">
+            <span class="info">10秒钟定制职位</span>
+            <span class="login">去登录</span>
+
+        </div>
+        <ul>
+            <li>
+                <img src="img/mon.png" alt="">
+                <div class="item">
+                    <h3>番茄来了</h3>
+                    <div class="sec-div">
+                        <p class="sec-row">BD（全sdfsdfsdfsdfsdfsd国总会计）[成都]
+                        </p>
+                        <span>5k-9k</span>
+                    </div>
+                    <p class="bottom-p">今天15:45</p>
+                </div>
+            </li>
+            <li>
+                <img src="img/mon.png" alt="">
+                <div class="item">
+                    <h3>番茄来了</h3>
+                    <div class="sec-div">
+                        <p class="sec-row">BD（全sdfsdfsdfsdfsdfsd国总会计）[成都]
+                        </p>
+                        <span>5k-9k</span>
+                    </div>
+                    <p class="bottom-p">今天15:45</p>
+                </div>
+            </li>
+        </ul>
+        <div class="more">
+            加载更多
+        </div>
+        <div class="footer">
+            <p>©2015 lagou.com, all right reserved </p>
+            <div>
+                <span>移动版</span>&nbsp.&nbsp
+                <span>电脑版</span>&nbsp.&nbsp
+                <span>回顶部</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="zw actived">
+            <i class="icon iconfont icon-home"></i>
+            <span>职位</span>
+        </div>
+        <div class="zw">
+            <i class="icon iconfont icon-sousuo"></i>
+            <span>搜索</span>
+        </div>
+        <div class="zw">
+            <i class="icon iconfont icon-ren"></i>
+            <span>我的</span>
+        </div>
+
+    </footer>
+    <script>
+        var c = new Vue({
+
+        })
+    </script>
+</body>
+
+</html>
