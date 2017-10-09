@@ -42,7 +42,7 @@
             width: 100%;
             padding: 0 20px 0 20px;
             position: relative;
-            border-bottom: 1px solid #666;
+            border-bottom: 1px solid #ddd;
             box-sizing: border-box;
         }
 
@@ -75,13 +75,14 @@
         }
 
         header {
-            position: fixed;
+            position: absolute;
             top: 0;
         }
 
         section {
             width: 100%;
             height: 100%;
+            overflow: auto;
         }
 
         ul li {
@@ -90,17 +91,18 @@
             padding: 14px;
             position: relative;
             box-sizing: border-box;
-            border-bottom: 1px solid #666;
+            border-bottom: 1px solid #ddd;
         }
 
         ul img {
             position: absolute;
             display: inline-block;
             width: 60px;
-            float: left
+            float: left;
         }
 
         .item {
+            height: 62px;
             margin-left: 70px;
             margin-right: 6px;
         }
@@ -108,10 +110,13 @@
         .sec-div {
             height: 15px;
             line-height: 15px;
+            margin-bottom: 3px;
         }
 
         .item h3 {
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2px;
         }
 
         .sec-div span {
@@ -122,7 +127,6 @@
 
         .sec-row {
             width: 60%;
-           
             font-size: 14px;
             float: left;
             display: inline-block;
@@ -141,16 +145,19 @@
             height: 50px;
             line-height: 50px;
             font-size: 1.1rem;
+            background: #fafafa;
             text-align: center;
         }
-/* 底部版权 */
-        .footer{
+        /* 底部版权 */
+
+        .footer {
             margin: 0 0 10px 0;
             text-align: center;
+            margin-bottom: 40px
         }
 
 
-        footer .zw{
+        footer .zw {
             display: inline-block;
             width: 33.33333%;
             font-size: 1rem;
@@ -160,7 +167,8 @@
             background: white;
             border-top: 1px solid #ddd
         }
-        footer .actived{
+
+        footer .actived {
             color: #00b38a;
             background: #e7f3f0;
         }
@@ -169,37 +177,26 @@
 
 <body>
     <header>拉勾网</header>
-    <section>
+    <section class="app">
         <div class="custom-info">
             <span class="info">10秒钟定制职位</span>
             <span class="login">去登录</span>
 
         </div>
         <ul>
-            <li>
-                <img src="img/mon.png" alt="">
+            <li v-for="item in datay">
+                <img :src="item.imgpath" alt="">
                 <div class="item">
-                    <h3>番茄来了</h3>
+                    <h3>{{item.h3}}</h3>
                     <div class="sec-div">
-                        <p class="sec-row">BD（全sdfsdfsdfsdfsdfsd国总会计）[成都]
+                        <p class="sec-row">{{item.row2}}
                         </p>
-                        <span>5k-9k</span>
+                        <span>{{item.mon}}</span>
                     </div>
-                    <p class="bottom-p">今天15:45</p>
+                    <p class="bottom-p">{{item.time}}</p>
                 </div>
             </li>
-            <li>
-                <img src="img/mon.png" alt="">
-                <div class="item">
-                    <h3>番茄来了</h3>
-                    <div class="sec-div">
-                        <p class="sec-row">BD（全sdfsdfsdfsdfsdfsd国总会计）[成都]
-                        </p>
-                        <span>5k-9k</span>
-                    </div>
-                    <p class="bottom-p">今天15:45</p>
-                </div>
-            </li>
+
         </ul>
         <div class="more">
             加载更多
@@ -230,7 +227,55 @@
     </footer>
     <script>
         var c = new Vue({
-
+            el: ".app",
+            data: {
+                datay: [{
+                    imgpath: "img/mon.png",
+                    h3: "番茄来了",
+                    row2: "BD（全国总会计）[成都]",
+                    mon: "5k-8k",
+                    time: "今天15:45"
+                }, {
+                    imgpath: "https://static.lagou.com/images/logo_default.png",
+                    h3: "爱达食品",
+                    row2: "诚聘英语翻译应届生均可[成都]",
+                    mon: "3K-4K",
+                    time: "今天 17:005"
+                }, {
+                    imgpath: "https://static.lagou.com/i/image/M00/5B/36/CgqKkVfgo4SAMNyDAAAK7-0-_2o804.png",
+                    h3: "领健信息",
+                    row2: "培训经理-上海张江-00276 [ 上海 ]",
+                    mon: "15k-25k",
+                    time: "今天 16:59"
+                }
+                    , {
+                    imgpath: "https://static.lagou.com/i/image/M00/2C/69/Cgp3O1c5YgqABpdEAAHHKLfk_uI046.jpg",
+                    h3: "广州德慷",
+                    row2: "测试工程师 [ 广州 ]",
+                    mon: "5k-8k",
+                    time: "今天 16:56"
+                }
+                    , {
+                    imgpath: "https://static.lagou.com/i/image/M00/4E/8E/CgqKkVer0vuAXZj0AACgCQFS8CM280.jpg",
+                    h3: "杭州思图化工有限公司",
+                    row2: "淘宝天猫运营 [ 杭州 ]",
+                    mon: "4k-6k",
+                    time: "今天 16:56"
+                }, {
+                    imgpath: "https://static.lagou.com/i/image/M00/8D/42/Cgp3O1iFnRiAW2iJAACa55MQ3DI491.jpg",
+                    h3: "罗宾医生",
+                    row2: "网络推广引流专员 [ 广州 ]",
+                    mon: "4k-6k",
+                    time: "今天 16:55"
+                }, {
+                    imgpath: "https://static.lagou.com/i/image/M00/00/0A/Cgp3O1Ylru-AHVsAAAAZXste4Is921.png",
+                    h3: "证通股份",
+                    row2: "H5前端开发工程师 [ 上海 ]",
+                    mon: "15k-25k",
+                    time: "今天 16:56"
+                }
+                ]
+            }
         })
     </script>
 </body>
