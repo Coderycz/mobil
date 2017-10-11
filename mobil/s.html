@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lvyou</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_438243_nh4179a6ivrc0udi.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+        }
+        li{
+            list-style: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            width: 100%;
+            height: 66px;
+            line-height: 66px;
+            background: #148ad2; 
+            
+        }
+        header ul {
+            height: 100%;
+            display: flex;
+            padding: 0 0.5rem 0 .5rem;
+            justify-content: space-between;                
+        }
+        header li i {
+            font-size: 2rem!important;
+        }
+
+        nav{           
+            width: 100%;           
+        }
+        nav ul {
+            background: #1183c9;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 1.1rem 1rem 1.1rem;
+        }
+        nav ul li{
+            height: 1.4rem;
+            line-height: 1.4rem;
+            font-size: 0.6rem;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            border-radius: 0.7rem
+
+        }
+        nav li.active{
+            border: 1px solid #5ea8d5;
+        }
+
+        section{
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+        }
+        section ul {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%
+        }
+        section li{ 
+            width: 50%;
+        }
+        section li img{
+            width: 100%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><i class="icon iconfont icon-menu"></i></li>
+            <li><img src="img/images/s_03.jpg" alt=""></li>
+            <li><i class="icon iconfont icon-liubianxing1"></i></li>
+        </ul>
+    </header>
+    <nav>
+        <ul>
+            <li class="active">全部</li>
+            <li>热门</li>
+            <li>推荐</li>
+        </ul>
+    </nav>
+    <section>
+        <ul>
+            <li><img src="img/images/s_06.gif" alt=""></li>
+            <li><img src="img/images/s_07.gif" alt=""></li>
+            <li><img src="img/images/s_08.gif" alt=""></li>
+            <li><img src="img/images/s_09.gif" alt=""></li>
+            <li><img src="img/images/s_10.gif" alt=""></li>
+            <li><img src="img/images/s_11.gif" alt=""></li>
+            
+
+        </ul>
+
+    </section>
+    <script>
+        document.documentElement.style.fontSize = innerWidth/15+"px"
+    </script>
+</body>
+</html>

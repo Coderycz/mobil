@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>football</title>
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_438243_nh4179a6ivrc0udi.css">
+	<style>
+	
+		
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+		}
+		li{
+			list-style: none;
+		}
+		html,body{
+			height: 100%;
+			width: 100%;
+			font-size: 100px;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+		}
+
+		header,footer{
+			height: 0.44rem;
+			width: 100%;
+			
+		}
+		header ul{
+			height: 100%;
+			width: 100%;
+			display: flex;		
+			align-items: center;
+			background-color: #0dc441;
+			list-style: none;
+		}
+
+		header ul .ifont{
+			width: 0.44rem;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			
+		}
+		header ul .ifont i{			
+			font-size: 0.24rem;
+			color: rgba(255, 255, 255, 0.5);;
+		}
+		header ul .choose{
+			flex: 1;
+			font-size: 12px;
+			text-align: center;
+		} 
+		.choose span{
+			display: inline-block;
+			width: 60px;
+			height: 25px;
+			line-height: 25px;
+			background-color: green;
+			//margin-top: 10px;
+			color: rgba(255, 255, 255, 0.5);
+			background:rgba(10, 217, 133, 0.5);
+		}
+		.choose span:nth-child(1){
+			border-radius: 10px 0 0 10px;
+		}
+		.choose span:nth-child(2){
+			border-radius:  0 10px 10px 0;
+		}
+		.choose span.active{
+			background-color: #0ad985;
+			color: white;
+		}
+
+		nav{
+			height: 0.35rem;
+			width: 100%;
+			
+		}
+		nav ul{
+			display: flex;
+			width: 100%;
+			height: 100%;
+
+		}
+		nav ul li{
+			flex: 1;
+			text-align: center;
+			line-height: 0.35rem;
+			font-size: 0.14rem;
+			color: #000;
+		}
+		nav ul li.active{
+			border-bottom: 0.02rem solid #0dc441;
+			color: #0dc441;
+		}
+
+
+		section{
+			flex: 1;
+			width: 100%;
+			height: 100%;
+			overflow-y: auto;
+		}
+		section ul{
+			width: 100%;			
+			display: flex;
+			flex-wrap: wrap;
+			font-size: 0.14rem;
+		}
+		section li:nth-child(2n+1){
+			margin-top: 0.04rem;
+			padding: 0 0.02rem 0 0.04rem ;
+			width: 50%;
+		}
+		section li:nth-child(2n){
+			margin-top: 0.04rem;
+			padding: 0 0.04rem 0 0.02rem;
+			width: 50%;
+		}
+		section li img{
+			width: 100%;
+		}
+		section b{
+			font-size: 0.14rem;
+		}
+
+		footer ul{
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-top: 0.01rem solid #ced6cf;
+		}
+		footer ul li{
+			height: 100%;
+			color: #d6d6d6;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+
+		}
+		footer li.active{
+			color: #0dc441;
+    		font-weight: normal;
+		}
+		footer i{
+			font-size: 0.24rem!important;
+			line-height: 0.24rem;
+		}
+		footer span{
+			font-size:  0.12rem;
+			line-height: 0.12rem;
+		}
+		footer .cenicon{
+			position: relative;
+		}
+		footer .cenicon i{
+			position: absolute;
+			top: -6px;
+			width: 0.5rem;
+			height: 0.5rem;
+			font-size: 0.35rem!important;
+			text-align: center;
+			line-height: 0.5rem;
+			background-color: #fff;
+			border: 0.01rem solid #ced6cf;
+			border-radius: 0.25rem;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li class="ifont"><i class="icon iconfont icon-menu"></i></li>
+			<li class="choose">
+				<span class="active">热点</span><span>关注</span>
+			</li>
+			<li class="ifont"><i class="icon iconfont icon-erweima"></i></li>
+		</ul>
+	</header>
+	<nav>
+		<ul>
+			<li class="active">足球现场</li>
+			<li>足球生活</li>
+			<li>足球美女</li>
+		</ul>
+	</nav>
+	<section>
+		<ul>
+			<li><img src="img/img1.jpg" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img2.png" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img3.jpg" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img4.jpg" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img1.jpg" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img2.png" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img3.jpg" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			<li><img src="img/img4.jpg" alt="">
+				<b>西甲-巴萨3-4客负 皇马1-1丢榜首</b>
+			</li>
+			
+		</ul>
+	</section>
+	<footer>
+		<ul>
+			<li class="active"><i class="icon iconfont icon-home"></i><span>首页</span></li>
+			<li><i class="icon iconfont icon-search"></i><span>首页</span></li>
+			<li class="cenicon"><i class=" icon iconfont icon-xiangji"></i></li>
+			<li><i class="icon iconfont icon-wode"></i><span>首页</span></li>
+			<li><i class="icon iconfont icon-tuichu"></i><span>首页</span></li>
+		</ul>
+	</footer>
+	<script>
+		console.log(document.documentElement)
+	</script>
+</body>
+</html>
