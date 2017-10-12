@@ -24,6 +24,9 @@
             background: black;
             opacity: 0.5;
         }
+        ul.tran{
+            transition: all 0.8s;
+        }
         
         ul li{
             width: 20%;
@@ -56,10 +59,16 @@
            i++ 
            if(i == 5){
                i=1
+               ul.className= "";
                ul.style.webkitTransform = "translate3d(-"+0+"%,0,0)"
            }         
             console.log(i)
+            ul.className="tran";
             ul.style.webkitTransform = "translate3d(-"+i*20+"%,0,0)"
+            if(i == 4){
+                ul.className= "";
+            }
+            //
         })
         ham.on("swiperight",function(){
             i--          

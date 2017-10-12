@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/hammer.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            
+        }
+        ul{
+            position: absolute;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 80%;
+            list-style: none;
+            color: white;
+            
+            
+        }
+        ul.tran{
+            transition: all 0.8s;
+        }
+        
+        ul li{
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            float: left;
+            background: black;
+            opacity: 0.5;
+            border: 1px solid red
+        }
+        
+    </style>
+</head>
+<body>
+    
+        <ul id="container">
+            <li>111</li>
+            <li>222</li>
+            <li>sdkfs </li>
+            <li>4sdfs</li>            
+        </ul>  
+           
+    
+    <script>
+        var ul = document.getElementById("container")
+        var lis = ul.getElementsByTagName("li")
+        var body = document.documentElement  
+        var width = lis[0].offsetWidth  
+        console.log(width)           
+        ul.addEventListener("touchstart",function(ev){
+            ev.preventDefault()
+            var a = ev.changedTouches[0].clientX
+            var left = ul.offsetLeft
+            ul.className=""
+            console.log(left ,a)
+           
+            ul.addEventListener("touchmove",function(ev){
+                var move = ev.changedTouches[0].clientX;
+                ul.style.left = left+move-a + "px"
+                console.log(move-a)
+            })
+            ul.addEventListener("touchend",function(ev){
+                var b = ev.changedTouches[0].clientX
+                var n = Math.round(ul.offsetLeft / width)
+                if(-n == lis.length){
+                    n = -(lis.length-1)
+                }
+                if(n == 1 ){
+                    n =0
+                }
+                ul.className="tran"
+                ul.style.left = n*width + "px";               
+                console.log(n)
+            })
+        })
+       
+
+       
+        
+
+    </script>
+</body>
+</html>
