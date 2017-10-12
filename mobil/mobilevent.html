@@ -19,14 +19,15 @@
     <script>
         let div = document.getElementById("touch");
         div.addEventListener("touchstart",function(ev){
-            this.innerHTML = ev.touches.length + ev.targetTouches.length+ ev.changedTouches.length
-        })
+            alert(ev.touches.length)
+            this.innerHTML = ev.touches.length +"  "+ ev.targetTouches.length+ "   "+ev.changedTouches.length
+        },false)
         div.addEventListener("touchmove",function(ev){
             this.innerHTML = ev.touches.length + ev.targetTouches.length+ ev.changedTouches.length
-        })
+        },false)
         div.addEventListener("touchend",function(ev){
             this.innerHTML = ev.touches.length + ev.targetTouches.length+ ev.changedTouches.length
-        })
+        },false)
     </script>
 </body>
 </html>
