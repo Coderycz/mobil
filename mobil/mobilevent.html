@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div{
+        html,body,div{
             background: green;
-            width: 300px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -17,9 +17,9 @@
     <div id="touch">
     </div>
     <script>
-        let div = document.getElementById("touch");
+        var div = document.getElementById("touch");
         div.addEventListener("touchstart",function(ev){
-            alert(ev.touches.length)
+            //alert(ev.touches.length)           
             this.innerHTML = ev.touches.length +"  "+ ev.targetTouches.length+ "   "+ev.changedTouches.length
         },false)
         div.addEventListener("touchmove",function(ev){
