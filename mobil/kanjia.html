@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            width: 100%;
+        }
+
+        footer {
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            padding: 0 0.4rem;
+            font-size: .8rem;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.3)
+        }
+
+        header img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        section {
+            flex: 1;
+            width: 100%;
+            overflow: auto;
+
+            padding: 0 0.4rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        section li {
+            display: flex;
+        }
+
+        section p {
+            text-align: center;
+            font-size: 0.75rem
+        }
+
+        footer p {
+            font-size: 0.5rem;
+        }
+        footer img{
+            width: 1.6rem;
+            height: 1.6rem;
+            vertical-align: middle;
+        }
+        footer .font{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header><img src="img/kan_01.png" alt=""></header>
+    <section>
+
+        <p><span>活动规则</span></p>
+
+        <div>砍价联盟活动正在进行中，砍价联盟活动正在进行中砍价联盟活动价联盟<span>100</span> 活动正在进行中砍价联盟活动正在进行中</div>
+        <ul>
+            <li>
+                <img src="img/kan_04.jpg" alt="">
+                <div>
+                    <p>联盟活动正在进行中，砍价联盟活动正进行中砍</p>
+                    <div><span>￥95</span>
+                        <del>￥125</del>
+                    </div>
+                    <div><span>立即动手</span><span>找人砍它</span></div>
+                </div>
+
+            </li>
+            <li>
+                <img src="img/kan_04.jpg" alt="">
+                <div>
+                    <p>联盟活动正在进行中，砍价联盟活动正进行中砍</p>
+                    <div><span>￥95</span>
+                        <del>￥125</del>
+                    </div>
+                    <div><span>立即动手</span><span>找人砍它</span></div>
+                </div>
+
+            </li>
+            <li>
+                <img src="img/kan_04.jpg" alt="">
+                <div>
+                    <p>联盟活动正在进行中，砍价联盟活动正进行中砍</p>
+                    <div><span>￥95</span>
+                        <del>￥125</del>
+                    </div>
+                    <div><span>立即动手</span><span>找人砍它</span></div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <div>
+            <img src="" alt="">
+            <div class="font">
+                <p>电器城</p>
+                <p>有我你放心</p>
+            </div>
+        </div>
+        <div>立即关注</div>
+
+    </footer>
+    <script>
+        document.documentElement.style.fontSize = innerWidth / 15 + "px"
+    </script>
+</body>
+
+</html>
