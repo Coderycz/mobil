@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+        .red{
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="range" min="0" max="255" v-model="r">r:{{r}}</br>
+        <input type="range" min="0" max="255" v-model="g">g:{{g}}</br>
+        <input type="range" min="0" max="255" v-model="b">b:{{b}}</br>
+        <div class="" :style="{'background':bg}">{{color}}调色板</div>
+        <input type="text" v-model="info" >
+        <div v-show="info.length < 10" :class="{red: flag}">还可以输入个{{10-info.length}}字符</div>
+        <div v-show="info.length == 11" >{{info.length}}</div>
+    </div>
+    <script>
+        var vm=new Vue({
+            el: "#app",
+            data: {               
+                r: 255,
+                g: 255,
+                b: 255,
+                color: "red",
+                bg: "white",
+                info: "",
+                flag: "true"
+            },
+            
+            updated(){     
+                this.color= `rgb(${this.r},${this.g},${this.b})`
+                this.info = this.info.slice(0,10)
+            }
+        })
+    </script> 
+</body>
+</html>

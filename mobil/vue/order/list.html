@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>list</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .red{
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(value,index) in list" :class="{'red': index==indexs}" @click="indexs=index">{{value}}</li>
+        </ul>
+        <div v-for="(v,k) in conten" v-show="k == indexs">{{v}}</div>
+    </div>  
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                list:["banner","apple","bear","red"],
+                conten: ["banner","apple","bear","red"],
+                indexs: 0
+            },
+        })
+    </script>
+</body>
+</html>

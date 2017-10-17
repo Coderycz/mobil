@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>calc</title>
+        <script src="../node_modules/vue/dist/vue.js"></script>
+        <style>
+            .button{
+                padding: 0 10px;
+                background: red;
+                width: 20px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model.number="a">
+            <input type="text" v-model.number="b">
+            <div class = "button" @click="add">+</div>
+            <div class = "button" @click="reduce">-</div>
+            <div class = "button" @click="cheng">*</div>
+            <div class = "button" @click="chu"> /</div>
+            {{result}}
+
+        </div>
+        <script>
+             var flag=function(){
+                        if(isNaN(this.a) || isNaN(this.b)){
+                            alert("请输入一个数字")
+                            return false
+                        }
+                    }
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    a: "",
+                    b: "",
+                    result: ""
+                },
+                methods: {
+                   
+                    add(){
+                        test();
+                        console.log(isNaN(this.a))
+                        this.result = this.a +this.b
+                    },
+                    reduce(){
+                        test()
+                        this.result = this.a -this.b
+                    },
+                    chu(){
+                        test()
+                        if(this.a == 0){
+                            alert("0不能作为被除数")
+                            return false;
+                        }
+                        this.result = this.a /this.b
+                        this.result = this.result.toFixed(2)
+                    },
+                    cheng(){
+                        test()
+                        this.result = this.a *this.b                       
+                    }
+                }
+            })
+        </script>
+    </body>
+    </html>
+</body>
+</html>
