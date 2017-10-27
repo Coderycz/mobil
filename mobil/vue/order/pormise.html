@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+
+
+    </div>
+    <script>
+        /* $(function(){
+            $.get("a.txt",function(data){
+                alert(data)
+                $.get("b.txt",function(data){
+                    alert(data)
+                    $.get("c.txt",function(data){
+                        alert(data)
+                    })
+                })
+            })
+        }) */
+
+        function read(filename){
+         return new Promise(function(resolve,rejest){
+             $.get(filename,function(data){
+                 resolve(data)
+             })
+         }) 
+         
+        }
+        read("a.txet").then(read("b.text"))
+    </script>
+</body>
+</html>

@@ -28,12 +28,13 @@
         <div id="app">
             <input type="text" v-model.number="a">
             <input type="text" v-model.number="b">
+            <input type="text" v-model="num">
+            {{useinfo}}
             <div class = "button" @click="add">+</div>
             <div class = "button" @click="reduce">-</div>
             <div class = "button" @click="cheng">*</div>
             <div class = "button" @click="chu"> /</div>
             {{result}}
-
         </div>
         <script>
              var flag=function(){
@@ -47,21 +48,27 @@
                 data: {
                     a: "",
                     b: "",
-                    result: ""
+                    result: "",
+                    num: "ssd"
                 },
                 methods: {
-                   
+                   test(){
+                    if(isNaN(this.a) || isNaN(this.b)){
+                            alert("请输入一个数字")
+                            return false
+                        }
+                   },
                     add(){
-                        test();
+                        this.test();
                         console.log(isNaN(this.a))
                         this.result = this.a +this.b
                     },
                     reduce(){
-                        test()
+                        this.test();
                         this.result = this.a -this.b
                     },
                     chu(){
-                        test()
+                        this.test();
                         if(this.a == 0){
                             alert("0不能作为被除数")
                             return false;
@@ -70,10 +77,34 @@
                         this.result = this.result.toFixed(2)
                     },
                     cheng(){
-                        test()
+                        this.test()
                         this.result = this.a *this.b                       
                     }
+                },
+                
+                watch:{
+                    num(n,o){
+                        if(n == 55){
+                            this.num = n+"摄氏度上一个值为"+ o
+                        }
+                    }
+                },
+                computed:{
+                    useinfo:{
+                        get(){
+                            return this.num.toUpperCase() 
+                        }                                                                    
+                    },
+                    
+
                 }
+               /*  watch: {
+                    num: function(newval,oldval){
+                        if(newval>26){
+                            this.close="sjksd "+oldval
+                        }
+                    }
+                } */
             })
         </script>
     </body>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .red{
+            
+            background: green;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .tab:after{
+            content: "";
+            display: block;
+            clear: both;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        {{indexs}}
+        <!-- <ul>
+                <li v-for="(value,index) in pro" :class="{'red': index==ind}" @click="ind=index">{{value}}</li>
+            </ul>
+            {{pro}}{{con}}
+            <div v-for="(v,k) in con" v-show="true">{{v}}</div> -->
+        <tab :pro="list" :con="conten" :ind = "indexs" @getind="getin"></tab>
+        <tab :pro="list1" :con="conten1" :ind = "inde1" @getind="getin"></tab>
+    </div>
+    <script>
+        const tab = {
+            data(){
+                return{
+                    indexs: 0
+                }
+            },
+            props: ["pro","con","ind"],
+            template: `<div class="tab"> <ul>
+                <li v-for="(value,index) in pro" :class="{'red': index==indexs}" @click="active(ind,index)">{{value}}</li>
+            </ul>
+            <div v-for="(v,k) in con" v-show="indexs == k">{{v}}</div>
+            </div>
+            `,
+            methods: {
+                active(n,b){
+                    this.indexs=b
+                    this.$emit("getind",b)
+                }
+            }
+        }
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                list:["banner","apple","bear","red"],
+                conten: ["banner","apple","bear","red"],
+                list1:["banner","apple","bear","red"],
+                conten1: ["banner","apple","bear","red"],
+                inde1:0,
+                indexs: 0
+            },
+            components:{
+                tab
+            },
+            methods:{
+                getin(n){
+                    this.indexs = n
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

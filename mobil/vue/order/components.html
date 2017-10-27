@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <com sx="3"></com>
+        <tem sd="90" @comp="name"></tem>
+        <button>点击加5</button>
+    </div>
+    <script>
+        var com = {
+            template: "<div><p>模块{{sx}}</p></div>",
+            props: ["sx"],
+        }
+        var tem = {
+            data() {
+                return {
+                    b: this.sd
+                }
+            },
+            props: ["sd"],
+            template: `<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" :style="{'width':b+'%'}">
+    <span class="sr-only">{{b}}% Complete</span>
+  </div>
+</div>`,
+            created() {         
+                var timer = setInterval(() => {
+                    this.b = Number(this.b) + 2
+                    console.log(this.b)
+                    if (this.b == 100) {                        
+                        clearInterval(timer)
+                        alert("加载完成")
+                        this.$emit("comp",this.b)
+                    }
+                }, 200)
+                //console.log(this.b)
+                
+            }
+        }
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                a: 0
+            },
+            components: {
+                com,
+                tem
+            },
+
+            watch: {
+                a: function () {                 
+                }
+            },
+            methods: {
+                name(n){
+                    console.log(n)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
